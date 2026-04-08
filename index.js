@@ -24,6 +24,9 @@ const registrationFlow = [
 ];
 
 
+
+
+
 dotenv.config();
 
 const app = express();
@@ -242,6 +245,7 @@ app.get('/api/admin/dashboard-stats', async (req, res) => {
 });
 
 app.post('/api/whatsapp', async (req, res) => {
+  console.log(req , "  req ")
   const twiml = new MessagingResponse();
   const from = req.body.From; // format: 'whatsapp:+123456789'
   const body = req.body.Body.trim();
